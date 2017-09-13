@@ -1,0 +1,28 @@
+extends layout.pug
+
+block append scripts
+     script(src="/js/app.js")
+
+block content
+         h1.hidden#team-name-container
+          span Your team's name:
+          span#team-label
+         input(
+            type='text'
+            name='team-name'
+            id='team-name'
+            class='form-control input-lg'
+            placeholder='Enter your team\'s name'
+          )
+         button(
+           type='button'
+           class='btn btn-default'
+           id='set-name'
+           )
+             Span Enter the quiz 
+         button(
+            type='button'
+            class='btn hidden btn-success btn-lg'
+            id='answer-button'
+            )
+              Span ANSWER!!

@@ -1,0 +1,22 @@
+extends layout.pug
+
+block append scripts
+     script(src="/js/dashboard.js")
+
+block content
+   body
+       div(
+         class='col-md-6'
+         )
+         button(
+           type='button'
+           class='btn btn-default'
+           id='set-name'
+           )
+             Span Send 
+         button(
+            type='button'
+            class='btn hidden btn-success'
+            id='answer-button'
+            )
+              Span ANSWER

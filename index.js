@@ -1,4 +1,5 @@
 var express = require('express');
+var config = require('config');
 var app = express();
 app.set('view engine', 'pug');
 app.set('views','./templates');
@@ -14,7 +15,9 @@ app.get('/', function(req, res){
 app.get('/dashboard', function(req, res){
      res.render('dashboard');
 });
-var io = require('socket.io').listen(app.listen(3000));
+var io = require('socket.io').listen(app.listen(config.get('port')));
+
+console.log("Serving on address: http://localhost:"+config.get('port'));
 
 locked = false;
 io.sockets.on('connection', function (socket) {

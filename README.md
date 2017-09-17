@@ -2,9 +2,9 @@
 A little expressJS buzzer application we use in Mushtarak's quiz nights
 
 
-Installation
+Installation:
 
-clone the repository
+clone/download repository
 
 npm install
 

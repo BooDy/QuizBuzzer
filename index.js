@@ -1,23 +1,27 @@
-var express = require('express');
+// setup 
+var express  = require('express');
+var app      = express();
 var config = require('config');
-var app = express();
+
 app.set('view engine', 'pug');
-app.set('views','./templates');
+app.set('views','./app/templates');
 app.use(require('express-jquery')('/jquery.js'));
 app.use(express.static('public'));
 
+//Get them routes..
+var routes = require('./app/routes.js');
 
-
-app.get('/', function(req, res){
-     res.render("play");
-});
-
-app.get('/dashboard', function(req, res){
-     res.render('dashboard');
-});
+app.use('/', routes);
+/*
+var routes = requireDir('./app/routes');
+for (var i in routes) {
+  app.use('/', routes[i]);
+}
+*/
+//Open up, come on... There goes the nice socket.
 var io = require('socket.io').listen(app.listen(config.get('port')));
 
-console.log("Serving on address: http://localhost:"+config.get('port'));
+console.log("Serving on address: "+config.get('url')+":"+config.get('port'));
 
 locked = false;
 io.sockets.on('connection', function (socket) {
@@ -34,5 +38,3 @@ io.sockets.on('connection', function (socket) {
     locked = false;
   });
 });
-
-

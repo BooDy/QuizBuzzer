@@ -10,10 +10,17 @@
   "author": "BooDy",
   "license": "GPL-3.0",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "config": "^1.26.2",
+    "cookie-parser": "^1.4.3",
     "express": "^4.15.4",
     "express-jquery": "^1.8.3",
+    "express-session": "^1.15.5",
+    "mongoose": "^4.11.11",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "pug": "^2.0.0-rc.4",
+    "requiredir": "^1.0.7",
     "socket.io": "^2.0.3"
   }
 }

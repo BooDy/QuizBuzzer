@@ -1,8 +1,11 @@
 $(document).ready(function() {
   $("#set-name").click(function() { 
+    team_name = $("#team-name").val();
+    if (!team_name.length > 0) {
+      return;
+    }
     $("#set-name").hide();
     $("#team-name").hide();
-    team_name = $("#team-name").val();
     $("#team-label").html(team_name);
     $("#answer-button").removeClass('hidden');
     $("#team-name-container").removeClass('hidden');
